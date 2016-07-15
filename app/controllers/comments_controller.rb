@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
 	def create
 		@comment = current_user.comments.build(comment_params)
     	if @comment.save
-      		flash[:success] = "Micropost created!"
+      		flash[:success] = "Comment created!"
       		redirect_to root_url
     	else
       		render 'static_pages/help'
