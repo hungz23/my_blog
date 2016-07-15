@@ -24,9 +24,9 @@ module RailsBlog
     config.active_record.raise_in_transactional_callbacks = true
     # Include the authenticity token in remote forms.
     config.action_view.embed_authenticity_token_in_remote_forms = true
-    #config.autoload_paths += %w(#{config.root}/app/models/ckeditor)
+    config.autoload_paths += %w(#{config.root}/app/models/ckeditor)
     config.assets.precompile += Ckeditor.assets
-    #config.assets.precompile += %w( ckeditor/* )
-    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
+    config.assets.precompile += %w( ckeditor/* )
+    #config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
   end
 end
