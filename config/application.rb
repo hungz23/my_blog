@@ -25,5 +25,6 @@ module RailsBlog
     # Include the authenticity token in remote forms.
     config.action_view.embed_authenticity_token_in_remote_forms = true
     config.autoload_paths += %w(#{config.root}/app/models/ckeditor)
+    config.assets.precompile += Ckeditor.assets
   end
 end
