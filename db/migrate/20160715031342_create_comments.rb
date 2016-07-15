@@ -7,7 +7,7 @@ class CreateComments < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_foreign_key :comments, :entries, :users
+    #add_foreign_key :comments, :entries, :users
     add_index :comments, [:user_id, :entry_id, :created_at]
   end
 end
