@@ -1,0 +1,14 @@
+<% provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<%= form_for(@comment) do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+			<div class="field">
+				<%= f.hidden_field :entry_id, :value => @entry.id %>
+				<%= f.text_area :content, placeholder: "Compose new comment..." %>
+			</div>
+		<%= f.submit "Post", class: "btn btn-primary" %>
+		<% end %>
+	</div>
+</div>
