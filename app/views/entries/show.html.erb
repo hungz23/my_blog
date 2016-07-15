@@ -1,0 +1,22 @@
+<% provide(:title, "entry") %>
+<div class="row">
+		<ol class="entries">
+			<%= render @entry %>
+		</ol>
+	<div class="col-md-8">
+		<% if @entry.comments.any? %>
+			<h3>Comments (<%= @entry.comments.count %>)</h3>
+			<ol class="entries">
+				<%= render @comments %>
+			</ol>
+			<%= will_paginate @comments %>
+		<% end %>
+		<% if logged_in? and (current_user.following?(@entry.user) or current_user == @entry.user)%>
+			<section class="entry_form">
+				<%= render 'shared/comment_form' %>
+			</section>
+		<% end %>
+	</div>
+		<aside class="col-md-4">
+		</aside>
+</div>
